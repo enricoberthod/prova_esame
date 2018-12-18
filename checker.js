@@ -22,7 +22,7 @@ function check(url, invocationParameters,  expectedResultData, expectedResultSta
 	}
 	
 	
-	async function get(/*checkResult.*/urlChecked) {
+	async function get(checkResult.urlChecked) {
 		console.log('\n\ngetting ' + checkResult.urlChecked + '\n')
 		try {
 			const response = await fetch(checkResult.urlChecked);
