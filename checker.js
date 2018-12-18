@@ -10,9 +10,29 @@ function check(url, invocationParameters,  expectedResultData, expectedResultSta
         statusTestPassed: null,
         resultDataAsExpected: null
     }
-
-
-
+	
+	var string = '';
+	var a = Object.keys(invocationParameters)
+	if(a.length>0) {
+		string += '?' + a[0] + '=' + invocationParameters[a[0]];
+		for(let i=1; i<a.length; i++) {
+			string += '&' + a[i] + '=' + invocationParameters[a[i]];
+		}
+		checkResult.urlChecked += string
+	}
+	
+	
+	async function get(checkResult.urlChecked) {
+		console.log('\n\ngetting ' + checkResult.urlChecked + '\n')
+		try {
+			const response = await fetch(checkResult.urlChecked);
+			const json = await response.json();
+			console.log(json)
+		} catch (error) {
+			console.log(error);
+		}
+	};
+	
 }
 
 
